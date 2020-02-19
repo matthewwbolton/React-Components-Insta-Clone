@@ -18,7 +18,6 @@ const App = () => {
       {/* Add imported components here to render them */}
       <SearchBar />
       <PostsPage />
-      
     </div>
   );
 };
