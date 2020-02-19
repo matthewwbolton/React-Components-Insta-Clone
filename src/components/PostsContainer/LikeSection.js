@@ -13,7 +13,10 @@ const LikeSection = props => {
         <i onClick = {(e) => {
           if (e.target.classList.length === 2) {
             props.setLikes(props.likes + 1) 
-            e.target.classList.add('liked')
+            e.target.classList.add('fas', 'liked')
+          } else {
+            props.setLikes(props.likes - 1)
+            e.target.classList.remove('fas', 'liked')
           }
           }} className='far fa-heart' />
       </div>
