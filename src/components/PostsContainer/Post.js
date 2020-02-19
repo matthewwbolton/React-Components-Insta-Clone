@@ -14,7 +14,10 @@ const Post = props => {
 
 const [likes, setLikes] = useState(props.post.likes);
 
-  return (
+
+
+  
+return (
     <div className="post-border">
       <PostHeader
         username={props.post.username}
@@ -29,7 +32,7 @@ const [likes, setLikes] = useState(props.post.likes);
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection likes = {likes} setLikes = {setLikes} />
+      <LikeSection  likes = {likes} setLikes = {setLikes} />
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
