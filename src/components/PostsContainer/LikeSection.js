@@ -3,23 +3,28 @@
 // HINT: You will need to add an onClick event pass through your props and update the hard coded Likes
 import React from "react";
 
+
 const LikeSection = props => {
+
   return (
     <div>
-    <div
-      className="like-section"
-      key="likes-icons-container"
-    >
+    <div className="like-section" key="likes-icons-container">
       <div className="like-section-wrapper">
-        <i className="far fa-heart" />
+        <i onClick = {(e) => {
+          if (e.target.classList.length === 2) {
+            props.setLikes(props.likes + 1) 
+            e.target.classList.add('fas', 'liked')
+          } else {
+            props.setLikes(props.likes - 1)
+            e.target.classList.remove('fas', 'liked')
+          }
+          }} className='far fa-heart' />
       </div>
       <div className="like-section-wrapper">
         <i className="far fa-comment" />
       </div>
     </div>
-    <p className="like-number">
-      
-      likes</p>
+  <p className="like-number"><strong>{props.likes} likes</strong></p>
 </div>
   )
 };
